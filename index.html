@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Toko Online Lunar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Toko Online Kelompok 29</h1>
+    <p>Belanja mudah & cepat tanpa harus mengantri</p>
+    <a href="checkout.html" class="btn">🧾 Checkout</a>
+    <a href="cart.html" class="btn">🛒 Lihat Keranjang</a>
+</header>
+
+<div class="container">
+    <div class="product">
+        <img src="onigiri.jpg" alt="Onigiri">
+        <h3>Onigiri Nasi Uduk</h3>
+        <p class="price">Rp12.000</p>
+        <button onclick="addToCart('Onigiri Nasi Uduk', 12000)">Beli</button>
+    </div>
+
+    <div class="product">
+        <img src="es jeruk kunci.jpg" alt="Es Jeruk Kunci">
+        <h3>Es Jeruk Kunci</h3>
+        <p class="price">Rp10.000</p>
+        <button onclick="addToCart('Es Jeruk Kunci', 10000)">Beli</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Toko Kelompok 29</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
