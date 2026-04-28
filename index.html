@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Toko Online Lunar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online Kelompok 29</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,24 +11,33 @@
 <header>
     <h1>Toko Online Kelompok 29</h1>
     <p>Belanja mudah & cepat tanpa harus mengantri</p>
-    <a href="checkout.html" class="btn">🧾 Checkout</a>
-    <a href="cart.html" class="btn">🛒 Lihat Keranjang</a>
+
+    <div class="nav-btn">
+        <a href="checkout.html" class="btn checkout">🧾 Checkout</a>
+        <a href="cart.html" class="btn cart">🛒 Keranjang</a>
+    </div>
 </header>
 
 <div class="container">
     <div class="product">
+        <span class="badge">DISKON</span>
         <img src="onigiri.jpg" alt="Onigiri">
         <h3>Onigiri Nasi Uduk</h3>
-        <p class="price">Rp12.000</p>
-        <button onclick="addToCart('Onigiri Nasi Uduk', 12000)">Beli</button>
+
+        <p class="old-price">Rp12.000</p>
+        <p class="price">Rp10.000</p>
+
+        <button onclick="addToCart('Onigiri Nasi Uduk', 10000)">Beli</button>
     </div>
 
     <div class="product">
-        <img src="es jeruk kunci.jpg" alt="Es Jeruk Kunci">
+        <img src="es jeruk kunci.jpg" alt="Es Jeruk">
         <h3>Es Jeruk Kunci</h3>
-        <p class="price">Rp10.000</p>
-        <button onclick="addToCart('Es Jeruk Kunci', 10000)">Beli</button>
+        <p class="price">Rp8.000</p>
+
+        <button onclick="addToCart('Es Jeruk Kunci', 8000)">Beli</button>
     </div>
+
 </div>
 
 <footer>
