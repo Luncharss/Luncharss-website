@@ -1,60 +1,99 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Keranjang Belanja</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keranjang | Rodo's Shop</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <header>
-    <h1>Keranjang Belanja</h1>
-    <a href="index.html">↩ Beranda</a>
-    <a href="checkout.html" class="btn checkout.html">🧾 Checkout</a>
+
+    <div class="hero-box">
+
+        <h1>🛒 Keranjang Belanja</h1>
+
+        <p>
+            Periksa kembali produk yang telah kamu pilih.
+        </p>
+
+        <div class="nav-btn">
+
+            <a href="index.html" class="btn checkout">
+                🏠 Beranda
+            </a>
+
+            <a href="checkout.html" class="btn cart">
+                💳 Checkout
+            </a>
+
+        </div>
+
+    </div>
+
 </header>
 
-<div class="container" id="cartContainer"></div>
+<section class="container">
 
-<h2 id="total"></h2>
+    <div class="product" style="width:700px;max-width:100%;">
 
-<script>
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let container = document.getElementById("cartContainer");
-    let totalEl = document.getElementById("total");
+        <h2 style="margin-bottom:20px;text-align:center;">
+            Daftar Produk
+        </h2>
 
-    function renderCart() {
-        container.innerHTML = "";
-        let total = 0;
+        <div id="cartItems"></div>
 
-        if (cart.length === 0) {
-            container.innerHTML = "<p>Keranjang masih kosong</p>";
-            totalEl.innerText = "";
-            return;
-        }
+        <hr style="margin:25px 0;">
 
-        cart.forEach((item, index) => {
-            total += item.harga;
+        <h2 style="text-align:right;">
+            Total :
+            <span id="totalHarga">
+                Rp0
+            </span>
+        </h2>
 
-            container.innerHTML += `
-                <div class="product">
-                    <h3>${item.nama}</h3>
-                    <p class="price">Rp${item.harga}</p>
-                    <button onclick="hapusItem(${index})">Hapus</button>
-                </div>
-            `;
-        });
+        <br>
 
-        totalEl.innerText = "Total: Rp" + total;
-    }
+        <button
+        style="width:100%;"
+        onclick="checkout()">
 
-    function hapusItem(index) {
-        cart.splice(index, 1); // hapus 1 item berdasarkan index
-        localStorage.setItem("cart", JSON.stringify(cart));
-        renderCart(); // refresh tampilan
-    }
+            💳 Checkout Sekarang
 
-    renderCart();
-</script>
+        </button>
+
+        <br><br>
+
+        <button
+        style="width:100%;background:#e53935;"
+        onclick="hapusSemua()">
+
+            🗑 Kosongkan Keranjang
+
+        </button>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 Rodo's Shop
+
+</footer>
+
+<script src="cart.js"></script>
 
 </body>
+
 </html>
